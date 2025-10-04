@@ -137,6 +137,7 @@ function initAnimations() {
                 }
                 
                 // Animate language bars
+                
                 if (entry.target.classList.contains('language-item')) {
                     const languageProgress = entry.target.querySelector('.language-progress');
                     if (languageProgress) {
@@ -161,25 +162,65 @@ function initAnimations() {
 }
 
 // Skill bars animation
+
+// Enhanced Skill bars animation - REPLACE YOUR EXISTING FUNCTION
 function initSkillBars() {
+    // Get all progress bars
     const skillProgressBars = document.querySelectorAll('.skill-progress');
     const languageProgressBars = document.querySelectorAll('.language-progress');
+    const proficiencyLevels = document.querySelectorAll('.proficiency-level');
+    const learningProgresses = document.querySelectorAll('.progress-fill');
     
-    // Animate skill bars when they come into view
-    const skillObserver = new IntersectionObserver(function(entries) {
+    // Combine all progress bars
+    const allProgressBars = [
+        ...skillProgressBars,
+        ...languageProgressBars, 
+        ...proficiencyLevels,
+        ...learningProgresses
+    ];
+    
+    // Animate progress bars when they come into view
+    const progressObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const progressBar = entry.target;
-                const width = progressBar.getAttribute('data-width');
-                setTimeout(() => {
-                    progressBar.style.width = width + '%';
-                }, 300);
+                const width = progressBar.getAttribute('data-width') || 
+                              progressBar.getAttribute('data-level') ||
+                              progressBar.getAttribute('data-progress');
+                
+                if (width) {
+                    setTimeout(() => {
+                        progressBar.style.width = width + '%';
+                    }, 300);
+                }
+                
+                // Stop observing after animation
+                progressObserver.unobserve(progressBar);
             }
         });
-    }, { threshold: 0.5 });
+    }, { 
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+    });
     
-    skillProgressBars.forEach(bar => skillObserver.observe(bar));
-    languageProgressBars.forEach(bar => skillObserver.observe(bar));
+    // Observe all progress bars
+    allProgressBars.forEach(bar => {
+        if (bar) {
+            progressObserver.observe(bar);
+        }
+    });
+    
+    // Fallback: animate all progress bars after 2 seconds
+    setTimeout(() => {
+        allProgressBars.forEach(bar => {
+            const width = bar.getAttribute('data-width') || 
+                         bar.getAttribute('data-level') ||
+                         bar.getAttribute('data-progress');
+            if (width && bar.style.width === '') {
+                bar.style.width = width + '%';
+            }
+        });
+    }, 2000);
 }
 
 // Scroll effects

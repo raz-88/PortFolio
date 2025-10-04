@@ -769,6 +769,7 @@ p {
     transition: width 1.5s ease-in-out;
 }
 
+
 .languages-section {
     background: var(--light);
     padding: 40px;
@@ -810,6 +811,7 @@ p {
     width: 0;
     transition: width 1.5s ease-in-out;
 }
+    
 
 /* Education Section */
 .education {
@@ -908,6 +910,7 @@ p {
     font-weight: 500;
     margin-top: 10px;
 }
+
 
 /* Experience Section */
 .experience {
@@ -1472,5 +1475,504 @@ footer {
     
     .contact-form-container {
         padding: 20px;
+    }
+}
+
+
+/* ===== Programming Language Proficiency Bars ===== */
+.proficiency-section {
+    background: var(--light);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+}
+
+.proficiency-section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary);
+}
+
+.proficiency-bars {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.proficiency-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.language-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.language-name {
+    font-weight: 500;
+    min-width: 100px;
+    color: var(--text-primary);
+}
+
+.language-percent {
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 50px;
+    text-align: right;
+}
+
+.proficiency-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--gray-light);
+    border-radius: 4px;
+    margin: 0 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.proficiency-level {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+
+
+/* ===== GitHub Section ===== */
+.github {
+    padding: 5rem 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.github-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.stat-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.github-repos {
+    margin-bottom: 3rem;
+}
+
+.github-repos h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.repo-card {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.repo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.repo-header h4 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+}
+
+.repo-badge {
+    background: var(--success-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.repo-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.repo-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.repo-language {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.language-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.repo-stars, .repo-forks {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.repo-link:hover {
+    gap: 0.75rem;
+    color: var(--secondary-color);
+}
+
+.github-cta {
+    text-align: center;
+}
+
+/* ===== Currently Learning Section ===== */
+.learning {
+    padding: 5rem 0;
+    background: var(--bg-primary);
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.learning-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.learning-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.learning-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.learning-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.learning-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.learning-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-primary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.learning-progress span {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 40px;
+}
+
+/* ===== Resume Download Button Styles ===== */
+.btn btn-outline magnetic {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: rgb(48, 223, 68);
+    transform: translateY(-2px);
+}
+
+/* ===== Updated Skills Grid ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.skill-item {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(74, 0, 224, 0.05), rgba(142, 45, 226, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-item:hover::before {
+    opacity: 1;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.skill-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.skill-item p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-primary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+
+    
+
+/* ===== Animation Classes ===== */
+.animate-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .github-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .repo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .proficiency-bars {
+        max-width: 100%;
+    }
+    
+    .language-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .language-bar {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .learning-progress {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .progress-bar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .github-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+    
+    .learning-card {
+        padding: 1.5rem;
+    }
+    
+    .skill-item {
+        padding: 1.5rem;
     }
 }
