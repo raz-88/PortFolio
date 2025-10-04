@@ -1593,7 +1593,7 @@ footer {
     color: var(--text-primary);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: black;
     background-clip: text;
 }
 

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajnandan Yadav - Engineering Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- GitHub Contributions CSS -->
+    <link rel="stylesheet" href="github-contributions.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -587,6 +591,25 @@
         </div>
     </section>
 
+   <!-- GitHub Contributions Section -->
+    <section class="github-contributions">
+        <div class="contributions-container">
+            <div class="contributions-header">
+                <h2>
+                    <span id="contributions-year"></span>
+                    GitHub contributions       
+                    <small style="font-weight: normal; color: var(--text-secondary); margin-left: 18px;">
+                        Last updated: <span id="contributions-last-updated">--:--:--</span>
+                    </small>
+                </h2>
+            </div>
+            
+            <div id="github-contributions-container">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- Currently Learning Section -->
     <section id="learning" class="learning">
         <div class="container">
@@ -763,6 +786,10 @@
     </button>
 
     <script src="script.js"></script>
+
+    <!-- GitHub Contributions JS -->
+    <script src="github-contributions.js"></script>
+
 </body>
 
 </html>
