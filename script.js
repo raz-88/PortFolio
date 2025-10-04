@@ -49,7 +49,7 @@ function initTypingEffect() {
     const typedTextSpan = document.querySelector('.typed-text');
     const cursorSpan = document.querySelector('.cursor');
     
-    const textArray = ['Engineering Professional', 'Developer', 'Analyst', 'Innovator'];
+    const textArray = ['Engineering Professional', 'Problem Solver', 'Analyst', 'Innovator', 'Full-Stack Developer','Software Engineer', 'Tech Enthusiast'];
     const typingDelay = 100;
     const erasingDelay = 50;
     const newTextDelay = 2000;
