@@ -9,6 +9,8 @@
     <!-- GitHub Contributions CSS -->
     <link rel="stylesheet" href="github-contributions.css">
 
+    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -669,66 +671,75 @@
         </div>
     </section>
 
+    
+    
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Contact Me</h2>
-                <div class="section-subtitle">Get in touch</div>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-subtitle">I'll respond within 24 hours</div>
             </div>
+            
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's Talk</h3>
                     <p>I'm always open to discussing new opportunities and ideas.</p>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>rajnandan.ydv88@gmail.com</p>
+                            <p>your-email@gmail.com</p> <!-- Your actual email -->
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            
                             <p>+91 9122879242</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h4>Location</h4>
-                            <p>Bangaluru</p>
-                            
+                            <p>Bangalore, India</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="contact-form-container">
                     <form id="contactForm" class="contact-form">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                             <i class="fas fa-user"></i>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                             <i class="fas fa-envelope"></i>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject" required>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
                             <i class="fas fa-tag"></i>
                         </div>
+                        
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                             <i class="fas fa-comment"></i>
                         </div>
-                        <button type="submit" class="btn btn-primary magnetic">
+                        
+                        <button type="submit" class="btn btn-primary">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -737,6 +748,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -785,10 +797,17 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- Add EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script src="script.js"></script>
 
     <!-- GitHub Contributions JS -->
     <script src="github-contributions.js"></script>
+
+
+    <!-- Your contact form script -->
+    <script src="contact-form.js"></script>
 
 </body>
 
