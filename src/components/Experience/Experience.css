@@ -1,0 +1,265 @@
+.experience-page {
+  margin-top: var(--nav-h);
+  min-height: calc(100vh - var(--nav-h));
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(74, 143, 214, 0.03) 0%, rgba(46, 95, 158, 0.02) 100%);
+}
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0;
+  position: relative;
+}
+
+.exp-item-1 { animation: slideInUp 0.6s ease-out 0.2s both; }
+.exp-item-2 { animation: slideInUp 0.6s ease-out 0.3s both; }
+.exp-item-3 { animation: slideInUp 0.6s ease-out 0.4s both; }
+.exp-item-4 { animation: slideInUp 0.6s ease-out 0.5s both; }
+.exp-item-5 { animation: slideInUp 0.6s ease-out 0.6s both; }
+
+.exp-year-col {
+  padding: 24px 20px 24px 0;
+  text-align: right;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.exp-year-col::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--border2) 0%, rgba(192, 206, 224, 0.5) 100%);
+  z-index: 1;
+}
+
+.exp-dot {
+  position: absolute;
+  right: -7.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1C4D8D 0%, #0A66C2 100%);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px rgba(28, 77, 141, 0.2), 0 4px 12px rgba(28, 77, 141, 0.3);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.exp-card {
+  margin: 16px 0 16px 32px;
+  background: linear-gradient(135deg, var(--white) 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(28, 77, 141, 0.15);
+  border-radius: 16px;
+  padding: 22px 26px;
+  box-shadow: 0 10px 40px rgba(28, 77, 141, 0.08);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(74, 143, 214, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: all 0.6s ease;
+}
+
+.exp-card:hover {
+  border-color: rgba(28, 77, 141, 0.3);
+  box-shadow: 0 20px 60px rgba(28, 77, 141, 0.15);
+  transform: translateY(-8px);
+}
+
+.exp-card:hover::before {
+  top: -20%;
+  right: -20%;
+}
+
+.exp-role {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.exp-org {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.exp-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1C4D8D 0%, #0A66C2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 5px 14px rgba(28, 77, 141, 0.32), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  border-radius: 10px;
+}
+
+.exp-card:hover .exp-icon {
+  transform: scale(1.12) rotate(6deg) translateY(-4px);
+  box-shadow: 0 12px 28px rgba(28, 77, 141, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #0A4A8F 0%, #062E50 100%);
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(28, 77, 141, 0.1);
+}
+
+.tag {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(74, 143, 214, 0.2);
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1C4D8D;
+  box-shadow: 0 4px 12px rgba(28, 77, 141, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: default;
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74, 143, 214, 0.15), transparent);
+  transition: left 0.6s ease;
+}
+
+.tag:hover {
+  border-color: #0A66C2;
+  color: #0A4A8F;
+  background: linear-gradient(135deg, #e8f4ff 0%, #d4e8ff 100%);
+  box-shadow: 0 8px 20px rgba(74, 143, 214, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+.tag:hover::before {
+  left: 100%;
+}
+
+/* Staggered animations for tags */
+.tag-1 { animation: fadeInRight 0.5s ease-out 0.4s both; }
+.tag-2 { animation: fadeInRight 0.5s ease-out 0.5s both; }
+.tag-3 { animation: fadeInRight 0.5s ease-out 0.6s both; }
+
+.exp-year-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1C4D8D;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e8f4ff 100%);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(28, 77, 141, 0.2);
+  box-shadow: 0 4px 12px rgba(28, 77, 141, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.exp-year-col:hover .exp-year-text {
+  background: linear-gradient(135deg, #e8f4ff 0%, #d4e8ff 100%);
+  border-color: rgba(28, 77, 141, 0.4);
+  box-shadow: 0 6px 16px rgba(28, 77, 141, 0.15);
+  transform: translateY(-2px);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-item {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-year-col {
+    padding: 0 0 10px 0;
+  }
+
+  .exp-year-col::after {
+    display: none;
+  }
+
+  .exp-dot {
+    display: none;
+  }
+
+  .exp-card {
+    margin: 10px 0;
+  }
+}

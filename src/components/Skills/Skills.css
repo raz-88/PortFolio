@@ -1,0 +1,192 @@
+.skills-page {
+  margin-top: var(--nav-h);
+  min-height: calc(100vh - var(--nav-h));
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(74, 143, 214, 0.03) 0%, rgba(46, 95, 158, 0.02) 100%);
+}
+
+.skills-page .page-inner {
+  padding-top: 0px;
+  padding-bottom: 60px;
+}
+
+.skills-cats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.skill-cat {
+  background: linear-gradient(135deg, var(--white) 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(28, 77, 141, 0.15);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 40px rgba(28, 77, 141, 0.08);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-cat::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(74, 143, 214, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: all 0.6s ease;
+}
+
+.skill-cat:hover {
+  border-color: rgba(28, 77, 141, 0.3);
+  box-shadow: 0 20px 60px rgba(28, 77, 141, 0.15);
+  transform: translateY(-8px);
+}
+
+.skill-cat:hover::before {
+  top: -20%;
+  right: -20%;
+}
+
+/* Staggered animations */
+.skill-cat-1 { animation: slideInUp 0.6s ease-out 0.2s both; }
+.skill-cat-2 { animation: slideInUp 0.6s ease-out 0.3s both; }
+.skill-cat-3 { animation: slideInUp 0.6s ease-out 0.4s both; }
+.skill-cat-4 { animation: slideInUp 0.6s ease-out 0.5s both; }
+
+.skill-tools { animation: slideInUp 0.6s ease-out 0.6s both; }
+
+.skill-cat-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-bar-row {
+  margin-bottom: 16px;
+}
+
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.skill-bar-label span:last-child {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.bar-track {
+  height: 8px;
+  background: linear-gradient(90deg, rgba(28, 77, 141, 0.08) 0%, rgba(28, 77, 141, 0.04) 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(28, 77, 141, 0.1);
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1C4D8D 0%, #0A66C2 50%, #4A8FD6 100%);
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 16px rgba(74, 143, 214, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 4px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(74, 143, 214, 0.2);
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1C4D8D;
+  box-shadow: 0 4px 12px rgba(28, 77, 141, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.tech-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74, 143, 214, 0.15), transparent);
+  transition: left 0.6s ease;
+}
+
+.tech-tag:hover {
+  border-color: #0A66C2;
+  color: #0A4A8F;
+  background: linear-gradient(135deg, #e8f4ff 0%, #d4e8ff 100%);
+  box-shadow: 0 12px 28px rgba(74, 143, 214, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transform: translateY(-4px) scale(1.08);
+}
+
+.tech-tag:hover::before {
+  left: 100%;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-cats {
+    grid-template-columns: 1fr;
+  }
+}
