@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import "./Navigation.css";
 
 export default function Navigation() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // Check localStorage for saved preference
     const saved = localStorage.getItem("darkMode");
@@ -25,6 +26,18 @@ export default function Navigation() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -36,56 +49,65 @@ export default function Navigation() {
     setIsDarkMode(!isDarkMode);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((current) => !current);
+  };
+
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="nav">
       <a className="nav-logo" onClick={() => scrollToSection("home")} style={{ cursor: "pointer" }}>
         <span>R</span>ajnandan Yadav
       </a>
-      <div className="nav-links">
+      <div className={`nav-links ${isMobileMenuOpen ? "open" : ""}`} id="mobile-navigation">
         <a
-          onClick={() => scrollToSection("home")}
+          onClick={() => handleNavClick("home")}
           style={{ cursor: "pointer" }}
         >
           Home
         </a>
         <a
-          onClick={() => scrollToSection("about")}
+          onClick={() => handleNavClick("about")}
           style={{ cursor: "pointer" }}
         >
           About
         </a>
         <a
-          onClick={() => scrollToSection("skills")}
+          onClick={() => handleNavClick("skills")}
           style={{ cursor: "pointer" }}
         >
           Skills
         </a>
         <a
-          onClick={() => scrollToSection("education")}
+          onClick={() => handleNavClick("education")}
           style={{ cursor: "pointer" }}
         >
           Education
         </a>
         <a
-          onClick={() => scrollToSection("experience")}
+          onClick={() => handleNavClick("experience")}
           style={{ cursor: "pointer" }}
         >
           Experience
         </a>
         <a
-          onClick={() => scrollToSection("projects")}
+          onClick={() => handleNavClick("projects")}
           style={{ cursor: "pointer" }}
         >
           Projects
         </a>
         <a
-          onClick={() => scrollToSection("github")}
+          onClick={() => handleNavClick("github")}
           style={{ cursor: "pointer" }}
         >
           GitHub
         </a>
         <a
-          onClick={() => scrollToSection("contact")}
+          onClick={() => handleNavClick("contact")}
           style={{ cursor: "pointer" }}
         >
           Contact
@@ -98,6 +120,15 @@ export default function Navigation() {
           title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
           {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+        <button
+          className="nav-menu-toggle"
+          onClick={toggleMobileMenu}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
+        >
+          {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
         <a
           className="nav-resume"

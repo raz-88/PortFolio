@@ -105,12 +105,74 @@ export default function Home() {
         .floating-card-3 { animation: float 6s ease-in-out infinite 4s; }
         .avatar-ring { animation: rotate 20s linear infinite; }
         .cursor-blink { animation: blink 1s infinite; }
+
+        @media (max-width: 768px) {
+          .hero-layout {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .hero-right {
+            display: none;
+          }
+
+          .hero-mobile-visual {
+            display: flex;
+            width: 100%;
+            min-height: 320px;
+            margin: 0.5rem 0 1rem;
+          }
+
+          .hero-left {
+            order: 1;
+          }
+
+          .hero-avatar-wrap {
+            width: 18rem;
+            height: 18rem;
+          }
+
+          .hero-floating-card {
+            transform: scale(0.78);
+            transform-origin: center;
+          }
+
+          .hero-card-1 {
+            top: 4%;
+            left: 2%;
+          }
+
+          .hero-card-2 {
+            top: 4%;
+            right: 2%;
+          }
+
+          .hero-card-3 {
+            bottom: 4%;
+            right: 2%;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-mobile-visual {
+            min-height: 280px;
+          }
+
+          .hero-avatar-wrap {
+            width: 16rem;
+            height: 16rem;
+          }
+
+          .hero-floating-card {
+            transform: scale(0.68);
+          }
+        }
       `}</style>
 
-      <div id="home" className="relative max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)]">
+      <div id="home" className="hero-layout relative max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)]">
         
         {/* Left Content */}
-        <div className="space-y-6">
+        <div className="hero-left space-y-6">
           {/* Greeting */}
           <div className="flex items-center gap-3">
             <div className="w-7 h-0.5 bg-[#1C4D8D] rounded"></div>
@@ -131,6 +193,49 @@ export default function Home() {
             I'm a{" "}
             <span className="text-[#1C4D8D]">{typed}</span>
             <span className="cursor-blink inline-block w-0.5 h-7 bg-[#1C4D8D] ml-1 align-middle"></span>
+          </div>
+
+          {/* Mobile Image + Floating Cards */}
+          <div className="hero-mobile-visual hidden relative justify-center items-center h-80 lg:hidden">
+            <div className="hero-floating-card hero-card-1 floating-card-1 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ top: '10%', left: '2%' }}>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Code className="w-6 h-6 text-[#1C4D8D]" />
+                </div>
+                <span className="text-sm font-semibold text-gray-700">Developer</span>
+              </div>
+            </div>
+
+            <div className="hero-floating-card hero-card-2 floating-card-2 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ top: '10%', right: '2%' }}>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-[#1C4D8D]" />
+                </div>
+                <span className="text-sm font-semibold text-gray-700">Analyst</span>
+              </div>
+            </div>
+
+            <div className="hero-floating-card hero-card-3 floating-card-3 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ bottom: '10%', right: '2%' }}>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <Lightbulb className="w-6 h-6 text-[#1C4D8D]" />
+                </div>
+                <span className="text-sm font-semibold text-gray-700">Innovator</span>
+              </div>
+            </div>
+
+            <div className="hero-avatar-wrap relative w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center z-10">
+              <div className="avatar-ring absolute inset-0 border-4 border-[#1C4D8D] rounded-full"></div>
+              <div className="absolute inset-3 rounded-full overflow-hidden bg-gradient-to-br from-[#1C4D8D] to-[#629FAD] shadow-2xl z-20">
+                <img
+                  src={rajPhoto}
+                  alt="Rajnandan Yadav"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "center 20%" }}
+                  onError={(e) => (e.target.style.display = "none")}
+                />
+              </div>
+            </div>
           </div>
 
           {/* Bio */}
@@ -244,10 +349,10 @@ export default function Home() {
         </div>
 
         {/* Right Side - Avatar & Cards */}
-        <div className="relative flex justify-center items-center h-96 md:h-full">
+        <div className="hero-right relative hidden lg:flex justify-center items-center h-96 md:h-full">
           
           {/* Floating Card 1 - Developer (Top Left) */}
-          <div className="floating-card-1 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ top: '20%', left: '10%' }}>
+          <div className="hero-floating-card hero-card-1 floating-card-1 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ top: '20%', left: '10%' }}>
             <div className="flex flex-col items-center gap-2">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Code className="w-6 h-6 text-[#1C4D8D]" />
@@ -257,7 +362,7 @@ export default function Home() {
           </div>
 
           {/* Floating Card 2 - Analyst (Top Right) */}
-          <div className="floating-card-2 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ top: '20%', right: '10%' }}>
+          <div className="hero-floating-card hero-card-2 floating-card-2 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ top: '20%', right: '10%' }}>
             <div className="flex flex-col items-center gap-2">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                 <TrendingUp className="w-6 h-6 text-[#1C4D8D]" />
@@ -267,7 +372,7 @@ export default function Home() {
           </div>
 
           {/* Floating Card 3 - Innovator (Bottom Right) */}
-          <div className="floating-card-3 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ bottom: '20%', right: '10%' }}>
+          <div className="hero-floating-card hero-card-3 floating-card-3 absolute bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow z-5" style={{ bottom: '20%', right: '10%' }}>
             <div className="flex flex-col items-center gap-2">
               <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
                 <Lightbulb className="w-6 h-6 text-[#1C4D8D]" />
@@ -277,7 +382,7 @@ export default function Home() {
           </div>
 
           {/* Avatar Container */}
-          <div className="relative w-80 h-80 flex items-center justify-center z-10">
+          <div className="hero-avatar-wrap relative w-80 h-80 flex items-center justify-center z-10">
             {/* Rotating Ring with Moving Dot */}
             <div className="avatar-ring absolute inset-0 border-4 border-[#1C4D8D] rounded-full"></div>
             
