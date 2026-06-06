@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Code, TrendingUp, Lightbulb, Mail, Share2, FolderOpen, Download } from "lucide-react";
 import rajPhoto from "../../assets/Raj_photo.jpg";
+import resumePDF from "../../assets/Resume_Updated_June_26.pdf";
 import About from "../About/About";
 import Skills from "../Skills/Skills";
 import Education from "../Education/Education";
@@ -258,9 +259,8 @@ export default function Home() {
               <FolderOpen size={20} strokeWidth={2} /> View Projects
             </button>
             <a
-              href="https://rajnandanyadav.com.np/images/Resume_Rajnandan.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={resumePDF}
+              download="Resume_Rajnandan_Yadav.pdf"
               className="magnetic-btn flex-1 sm:flex-none px-6 sm:px-8 py-2.5 bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 text-white font-semibold text-sm rounded-full hover:shadow-2xl hover:shadow-green-500/40 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-auto whitespace-nowrap border border-emerald-400/30 backdrop-blur-sm"
             >
               <Download size={20} strokeWidth={2} /> Download Resume

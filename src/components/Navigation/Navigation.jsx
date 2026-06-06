@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
+import resumePDF from "../../assets/Resume_Updated_June_26.pdf";
 import "./Navigation.css";
 
 export default function Navigation() {
@@ -132,9 +133,9 @@ export default function Navigation() {
         </button>
         <a
           className="nav-resume"
-          href="https://rajnandanyadav.com.np/images/Resume_Rajnandan.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={resumePDF}
+          download="Resume_Rajnandan_Yadav.pdf"
+          title="Download Resume"
         >
           Download Resume ↓
         </a>
