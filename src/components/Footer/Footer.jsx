@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-logo">
         <span>R</span>ajnandan Yadav
       </div>
-      <div className="footer-copy">© 2025 Rajnandan Yadav. All Rights Reserved.</div>
+      <div className="footer-copy">© 2026 Rajnandan Yadav. All Rights Reserved.</div>
       <div className="footer-links">
         <a href="https://github.com/raz-88" target="_blank" rel="noopener noreferrer">
           GitHub

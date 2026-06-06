@@ -4,7 +4,7 @@ import "./Education.css";
 export default function Education() {
   const education = [
     {
-      year: "2022–26",
+      year: "2023–2027",
       degree: "B.Tech in Computer Science Engineering",
       school: "GITAM Deemed to be University, Bangalore",
       detail: "Data Structures, Algorithms, DBMS, Computer Networks, Software Engineering, Web Technologies",
@@ -14,7 +14,7 @@ export default function Education() {
     },
     {
       year: "2021",
-      degree: "School Leaving Certificate (SLC)",
+      degree: "School Leaving Certificate (XII)",
       school: "National Examination Board",
       badge: "GPA: 3.46 / 4.00",
       type: "gpa",
@@ -22,9 +22,9 @@ export default function Education() {
     },
     {
       year: "2019",
-      degree: "Secondary Education Examination",
+      degree: "Secondary Education Examination (X)",
       school: "National Examination Board",
-      badge: "GPA: 2.75 / 4.00",
+      badge: "GPA: 2.95 / 4.00",
       type: "gpa",
       icon: "award",
     },
