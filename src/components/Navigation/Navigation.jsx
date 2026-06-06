@@ -92,7 +92,7 @@ export default function Navigation() {
           onClick={() => handleNavClick("experience")}
           style={{ cursor: "pointer" }}
         >
-          Experience
+          Leadership & Roles
         </a>
         <a
           onClick={() => handleNavClick("projects")}

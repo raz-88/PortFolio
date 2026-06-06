@@ -3,44 +3,46 @@ import "./Experience.css";
 
 export default function Experience() {
   const experience = [
+    
     {
-      year: "2024",
-      role: "Full-Stack Developer",
-      org: "Personal Projects & Freelance",
-      tags: ["React.js", "Node.js", "MongoDB"],
+      year: "2026–Present",
+      role: "Webmaster",
+      org: "IEEE STB GITAM Bengaluru",
+      tags: ["Web Development", "Content Management", "Digital"],
     },
     {
-      year: "2024",
-      role: "Analyst",
-      org: "Google Analytics",
-      tags: ["Data Analysis", "Web Analytics"],
+      year: "March 2026",
+      role: "Technology Head",
+      org: "Namma Sportika",
+      tags: ["Leadership", "Project Management", "Technology"],
+    },
+    
+    {
+      year: "2026",
+      role: "Organizing Committee Member",
+      org: "ICTIEE International Conference",
+      tags: ["Event Management", "Conference", "Organization"],
     },
     {
-      year: "2021–23",
-      role: "Sales Representative",
-      org: "IME Digital Nepal",
-      tags: ["Sales", "Customer Service"],
-    },
+      year: "2025–2026",
+      role: "GSC (Operation, Design, and Media)",
+      org: "GITAM Sports",
+      tags: ["Sports Management", "Event Organization", "Coordination"],
+    },  
     {
-      year: "2020–21",
-      role: "Stock Analyst",
-      org: "Financial Market Analysis",
-      tags: ["Financial Analysis", "Market Research"],
-    },
-    {
-      year: "Various",
+      year: "2024–2026",
       role: "Volunteer",
-      org: "Community Service & Support",
-      tags: ["Community", "Support"],
+      org: "NSS (National Service Scheme)",
+      tags: ["Community Service", "Volunteering", "Social Impact"],
     },
   ];
 
   return (
     <div className="experience-page">
       <div className="page-inner">
-        <span className="section-tag">Journey</span>
-        <h2 className="section-title">Training &amp; Experience</h2>
-        <p className="section-sub">My professional journey</p>
+        <span className="section-tag">Leadership</span>
+        <h2 className="section-title">Leadership &amp; Roles</h2>
+        <p className="section-sub">My organizational contributions</p>
         <div className="divider"></div>
         <div className="exp-timeline">
           {experience.map((item, idx) => (
